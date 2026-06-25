@@ -25,9 +25,9 @@
 <div class="end-game-overlay" role="dialog" aria-modal="true" aria-labelledby="end-game-title">
   <section class="end-game-panel">
     <div>
-      <span>Game over</span>
+      <span>ゲーム終了</span>
       <h2 id="end-game-title">{resultLabel}</h2>
-      <p>Finished on turn {turn}</p>
+      <p>ターン {turn} で終了</p>
     </div>
     <div class="actions">
       {#if onsave}

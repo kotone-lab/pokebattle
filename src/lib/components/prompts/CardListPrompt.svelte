@@ -103,10 +103,10 @@
 
   {#snippet actions()}
     {#if options.allowCancel}
-      <button disabled={resolving} onclick={() => onresolve(null)}>Cancel</button>
+      <button disabled={resolving} onclick={() => onresolve(null)}>キャンセル</button>
     {/if}
     {#if optionalSelection}
-      <button disabled={resolving} onclick={() => onresolve([])}>Skip</button>
+      <button disabled={resolving} onclick={() => onresolve([])}>スキップ</button>
     {/if}
     <button class="primary" disabled={resolving || !canSubmitSelection} onclick={submitSelectedIndexes}>
       Confirm

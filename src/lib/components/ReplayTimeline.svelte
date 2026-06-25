@@ -67,8 +67,8 @@
     <span>{step.label}</span>
   </div>
   <div class="replay-controls" aria-label="Replay playback controls">
-    <button aria-label="First action" onclick={firstStep} disabled={stepIndex === 0}>|&lt;</button>
-    <button aria-label="Previous action" onclick={previousStep} disabled={stepIndex === 0}>&lt;</button>
+    <button aria-label="最初のアクション" onclick={firstStep} disabled={stepIndex === 0}>|&lt;</button>
+    <button aria-label="前のアクション" onclick={previousStep} disabled={stepIndex === 0}>&lt;</button>
     <button
       class="playback-toggle"
       aria-label={isPlaying ? 'Pause replay' : 'Play replay'}
@@ -83,15 +83,15 @@
       {/if}
     </button>
     <input
-      aria-label="Action step"
+      aria-label="アクションステップ"
       type="range"
       min="0"
       max={maxStepIndex}
       value={stepIndex}
       oninput={onStepInput}
     />
-    <button aria-label="Next action" onclick={nextStep} disabled={stepIndex >= maxStepIndex}>&gt;</button>
-    <button aria-label="Last action" onclick={lastStep} disabled={stepIndex >= maxStepIndex}>&gt;|</button>
+    <button aria-label="次のアクション" onclick={nextStep} disabled={stepIndex >= maxStepIndex}>&gt;</button>
+    <button aria-label="最後のアクション" onclick={lastStep} disabled={stepIndex >= maxStepIndex}>&gt;|</button>
   </div>
 </section>
 
@@ -103,9 +103,9 @@
   </div>
 
   <div class="replay-readout">
-    <span>Action <b>{actionValue}</b></span>
-    <span>State <b>{stateValue}</b></span>
-    <span>Turn <b>{step.turn}</b></span>
+    <span>アクション <b>{actionValue}</b></span>
+    <span>状態 <b>{stateValue}</b></span>
+    <span>ターン <b>{step.turn}</b></span>
     <span>{step.label}</span>
   </div>
 
@@ -113,7 +113,7 @@
     <label>
       State
       <input
-        aria-label="State index"
+        aria-label="状態インデックス"
         type="number"
         min="0"
         max={maxStateIndex}

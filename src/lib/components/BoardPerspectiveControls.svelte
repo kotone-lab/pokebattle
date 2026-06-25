@@ -17,9 +17,9 @@
 </script>
 
 <details class="board-perspective-controls">
-  <summary aria-label="Board perspective settings" title="Board perspective settings">⚙</summary>
+  <summary aria-label="ボード視点設定" title="ボード視点設定">⚙</summary>
   <div class="board-perspective-menu">
-    <strong>Board perspective</strong>
+    <strong>ボード視点</strong>
     <label>
       Tilt
       <input type="range" min="0" max="18" step="1" bind:value={boardTilt} />

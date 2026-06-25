@@ -43,9 +43,9 @@
 
     {#snippet actions()}
       {#if strategy.allowCancel}
-        <button disabled={resolving} onclick={strategy.cancel}>Cancel</button>
+        <button disabled={resolving} onclick={strategy.cancel}>キャンセル</button>
       {/if}
-      <button disabled={resolving || !strategy.canReset} onclick={strategy.reset}>Reset</button>
+      <button disabled={resolving || !strategy.canReset} onclick={strategy.reset}>リセット</button>
       <button class="primary" disabled={resolving || !strategy.canConfirm} onclick={strategy.confirm}>Confirm</button>
     {/snippet}
   </PromptStrip>

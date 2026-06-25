@@ -82,7 +82,7 @@
   data-owner-index={slot.ownerIndex}
   data-slot-kind={slot.slot}
   data-slot-index={slot.index}
-  title={slot.pokemon?.fullName ?? (slot.slot === 'active' ? 'Active' : `Bench ${slot.index + 1}`)}
+  title={slot.pokemon?.fullName ?? (slot.slot === 'active' ? 'バトル場' : `ベンチ ${slot.index + 1}`)}
   {onclick}
   {ondragover}
   {ondrop}
@@ -101,7 +101,7 @@
           class="pokemon-hp-bubble"
           class:hp-increased={hpIncreased}
           class:hp-decreased={hpDecreased}
-          title={`${displayHp ? `${displayHp} HP${hpModified ? ` (printed ${printedHp})` : ''}` : 'Pokemon'}${pokemonTypeIcon ? ` · ${pokemonTypeLabel}` : ''}`}
+          title={`${displayHp ? `${displayHp} HP${hpModified ? ` (表記${printedHp})` : ''}` : 'ポケモン'}${pokemonTypeIcon ? ` · ${pokemonTypeLabel}` : ''}`}
         >
           {#if displayHp}
             <span>{displayHp}</span>

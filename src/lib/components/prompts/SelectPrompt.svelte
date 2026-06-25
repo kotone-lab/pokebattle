@@ -73,8 +73,8 @@
   {#if isMulliganDrawPrompt}
     <div class="mulligan-slider">
       <div class="mulligan-slider-meta">
-        <span>Mulligan</span>
-        <strong>Draw {mulliganDrawAmount} card{Number(mulliganDrawAmount) === 1 ? '' : 's'}</strong>
+        <span>マリガン</span>
+        <strong>カードを {mulliganDrawAmount} 枚ドロー</strong>
       </div>
       <input
         type="range"
@@ -99,7 +99,7 @@
 
   {#snippet actions()}
     {#if options.allowCancel}
-      <button disabled={resolving} onclick={() => onresolve(null)}>Cancel</button>
+      <button disabled={resolving} onclick={() => onresolve(null)}>キャンセル</button>
     {/if}
     {#if isMulliganDrawPrompt}
       <button class="primary" disabled={resolving} onclick={submitMulliganDraw}>Confirm</button>

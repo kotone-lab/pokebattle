@@ -78,17 +78,17 @@
 
 <section class="import-screen">
   <div class="home-tabs" role="tablist" aria-label="Home mode">
-    <button class:active={homeMode === 'play'} type="button" onclick={() => setHomeMode('play')}>Play</button>
-    <button class:active={homeMode === 'logs'} type="button" onclick={() => setHomeMode('logs')}>Game logs</button>
+    <button class:active={homeMode === 'play'} type="button" onclick={() => setHomeMode('play')}>プレイ</button>
+    <button class:active={homeMode === 'logs'} type="button" onclick={() => setHomeMode('logs')}>対戦ログ</button>
   </div>
 
   {#if homeMode === 'play'}
     <div class="deck-import two-column">
       <div class="player-config">
         <span class="deck-label-row">
-          Player 1
+          プレイヤー1
         </span>
-        <span class="control-tabs" role="tablist" aria-label="Player 1 control">
+        <span class="control-tabs" role="tablist" aria-label="プレイヤー1 操作">
           <button
             type="button"
             role="tab"
@@ -96,7 +96,7 @@
             class:active={player1Control === 'self'}
             disabled={busy}
             onclick={() => setPlayerControl(0, 'self')}
-          >Self</button>
+          >自分</button>
           <button
             type="button"
             role="tab"
@@ -104,16 +104,16 @@
             class:active={player1Control === 'agent'}
             disabled={busy}
             onclick={() => setPlayerControl(0, 'agent')}
-          >Agent</button>
+          >エージェント</button>
         </span>
         <span class:self-only={player1Control === 'self'} class="setup-fields">
           {#if player1Control === 'agent'}
             <span class="field-row">
-              <span>Agent</span>
+              <span>エージェント</span>
               <select
                 bind:value={player1AgentId}
                 disabled={busy || agents.length === 0}
-                aria-label="Player 1 agent"
+                aria-label="プレイヤー1 エージェント"
               >
                 {#each agents as agent}
                   <option value={agent.id}>{agent.name}</option>
@@ -122,13 +122,13 @@
             </span>
           {/if}
           <span class="field-row">
-            <span>Deck</span>
+            <span>デッキ</span>
             <select
               bind:value={player1DeckSource}
               disabled={busy || player1AgentHasPairedDeck}
-              aria-label="Player 1 deck"
+              aria-label="プレイヤー1 デッキ"
             >
-              <option value="import">Import deck</option>
+              <option value="import">デッキをインポート</option>
               {#each deckOptions as agent}
                 <option value={agent.id}>{agent.name}</option>
               {/each}
@@ -137,7 +137,7 @@
         </span>
         <textarea
           bind:value={deck1Text}
-          aria-label="Player 1 deck list"
+          aria-label="プレイヤー1 デッキリスト"
           readonly={player1DeckLocked}
           class:locked={player1DeckLocked}
           spellcheck="false"
@@ -145,9 +145,9 @@
       </div>
       <div class="player-config">
         <span class="deck-label-row">
-          Player 2
+          プレイヤー2
         </span>
-        <span class="control-tabs" role="tablist" aria-label="Player 2 control">
+        <span class="control-tabs" role="tablist" aria-label="プレイヤー2 操作">
           <button
             type="button"
             role="tab"
@@ -155,7 +155,7 @@
             class:active={player2Control === 'self'}
             disabled={busy}
             onclick={() => setPlayerControl(1, 'self')}
-          >Self</button>
+          >自分</button>
           <button
             type="button"
             role="tab"
@@ -163,16 +163,16 @@
             class:active={player2Control === 'agent'}
             disabled={busy}
             onclick={() => setPlayerControl(1, 'agent')}
-          >Agent</button>
+          >エージェント</button>
         </span>
         <span class:self-only={player2Control === 'self'} class="setup-fields">
           {#if player2Control === 'agent'}
             <span class="field-row">
-              <span>Agent</span>
+              <span>エージェント</span>
               <select
                 bind:value={player2AgentId}
                 disabled={busy || agents.length === 0}
-                aria-label="Player 2 agent"
+                aria-label="プレイヤー2 エージェント"
               >
                 {#each agents as agent}
                   <option value={agent.id}>{agent.name}</option>
@@ -181,13 +181,13 @@
             </span>
           {/if}
           <span class="field-row">
-            <span>Deck</span>
+            <span>デッキ</span>
             <select
               bind:value={player2DeckSource}
               disabled={busy || player2AgentHasPairedDeck}
-              aria-label="Player 2 deck"
+              aria-label="プレイヤー2 デッキ"
             >
-              <option value="import">Import deck</option>
+              <option value="import">デッキをインポート</option>
               {#each deckOptions as agent}
                 <option value={agent.id}>{agent.name}</option>
               {/each}
@@ -196,7 +196,7 @@
         </span>
         <textarea
           bind:value={deck2Text}
-          aria-label="Player 2 deck list"
+          aria-label="プレイヤー2 デッキリスト"
           readonly={player2DeckLocked}
           class:locked={player2DeckLocked}
           spellcheck="false"
@@ -204,16 +204,16 @@
       </div>
     </div>
     <button class="primary" disabled={startDisabled} onclick={startGame}>
-      {busy ? 'Starting...' : 'Start game'}
+      {busy ? '開始中...' : 'ゲームを開始'}
     </button>
     {#if error}
       <pre class="error">{error}</pre>
     {/if}
   {:else}
     <div class="log-toolbar">
-      <strong>Game logs</strong>
+      <strong>対戦ログ</strong>
       <button type="button" disabled={catalogBusy} onclick={refreshCatalog}>
-        {catalogBusy ? 'Refreshing...' : 'Refresh'}
+        {catalogBusy ? '更新中...' : '更新'}
       </button>
     </div>
 
@@ -224,7 +224,7 @@
     {#if catalogBusy && gameLogs.length === 0}
       <p class="empty">Loading game logs...</p>
     {:else if gameLogs.length === 0}
-      <p class="empty">No game logs found in <code>public/game-logs</code>.</p>
+      <p class="empty">対戦ログが見つかりません（<code>public/game-logs</code>）</p>
     {:else}
       <div class="log-list">
         {#each gameLogs as log}

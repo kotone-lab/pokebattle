@@ -20,6 +20,6 @@
   {#snippet icon()}<PromptIcon name="hourglass" />{/snippet}
 
   {#snippet actions()}
-    <button disabled={resolving} onclick={() => onresolve(null)}>Continue</button>
+    <button disabled={resolving} onclick={() => onresolve(null)}>続ける</button>
   {/snippet}
 </PromptPanel>

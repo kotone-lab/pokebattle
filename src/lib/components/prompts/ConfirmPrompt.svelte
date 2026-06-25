@@ -20,7 +20,7 @@
   {#snippet icon()}<PromptIcon name="check" />{/snippet}
 
   {#snippet actions()}
-    <button disabled={resolving} onclick={() => onresolve(false)}>No</button>
-    <button class="primary" disabled={resolving} onclick={() => onresolve(true)}>Yes</button>
+    <button disabled={resolving} onclick={() => onresolve(false)}>いいえ</button>
+    <button class="primary" disabled={resolving} onclick={() => onresolve(true)}>はい</button>
   {/snippet}
 </PromptPanel>

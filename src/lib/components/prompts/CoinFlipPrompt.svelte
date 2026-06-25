@@ -14,7 +14,7 @@
 </script>
 
 <PromptPanel
-  title="Heads or tails?"
+  title="表か裏か？"
   subtitle={promptSubtitle(prompt, 'Heads or tails?')}
   warning={!prompt.supported ? (prompt.unsupportedReason ?? 'This prompt needs the advanced resolver.') : undefined}
 >

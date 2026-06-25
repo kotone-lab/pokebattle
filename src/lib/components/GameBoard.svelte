@@ -86,10 +86,10 @@
 
   function projectedPiles(): Array<[ProjectedPileKey, HTMLButtonElement | undefined, () => void]> {
     return [
-      ['top-lost', topLostPileElement, () => showZone(topPlayer.index, 'lostZone', `${topPlayer.name} lost zone`)],
-      ['top-discard', topDiscardPileElement, () => showZone(topPlayer.index, 'discard', `${topPlayer.name} discard`)],
-      ['bottom-lost', bottomLostPileElement, () => showZone(bottomPlayer.index, 'lostZone', `${bottomPlayer.name} lost zone`)],
-      ['bottom-discard', bottomDiscardPileElement, () => showZone(bottomPlayer.index, 'discard', `${bottomPlayer.name} discard`)],
+      ['top-lost', topLostPileElement, () => showZone(topPlayer.index, 'lostZone', `${topPlayer.name} ロストゾーン`)],
+      ['top-discard', topDiscardPileElement, () => showZone(topPlayer.index, 'discard', `${topPlayer.name} トラッシュ`)],
+      ['bottom-lost', bottomLostPileElement, () => showZone(bottomPlayer.index, 'lostZone', `${bottomPlayer.name} ロストゾーン`)],
+      ['bottom-discard', bottomDiscardPileElement, () => showZone(bottomPlayer.index, 'discard', `${bottomPlayer.name} トラッシュ`)],
     ];
   }
 
@@ -145,11 +145,11 @@
   }
 
   function showLostZone(player: PlayerView) {
-    showZone(player.index, 'lostZone', `${player.name} lost zone`);
+    showZone(player.index, 'lostZone', `${player.name} ロストゾーン`);
   }
 
   function showDiscard(player: PlayerView) {
-    showZone(player.index, 'discard', `${player.name} discard`);
+    showZone(player.index, 'discard', `${player.name} トラッシュ`);
   }
 </script>
 

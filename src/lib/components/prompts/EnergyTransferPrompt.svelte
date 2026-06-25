@@ -98,7 +98,7 @@
 
   {#snippet actions()}
     {#if options.allowCancel}
-      <button disabled={resolving} onclick={() => onresolve(null)}>Cancel</button>
+      <button disabled={resolving} onclick={() => onresolve(null)}>キャンセル</button>
     {/if}
     <button class="primary" disabled={resolving || !canSubmit} onclick={submit}>Confirm</button>
   {/snippet}

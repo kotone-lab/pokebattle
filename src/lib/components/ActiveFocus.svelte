@@ -151,7 +151,7 @@
   <button
     type="button"
     class="active-focus-backdrop"
-    aria-label="Close Pokemon actions"
+    aria-label="ポケモンアクションを閉じる"
     onclick={close}
   ></button>
   <section class="active-focus" class:inspecting={inspectingAttachments} aria-label={`${pokemon.name} actions`}>
@@ -159,7 +159,7 @@
       <div class="attachment-inspector" role="dialog" aria-modal="false" aria-label={`${pokemon.name} attached cards`}>
         <div class="attachment-inspector-topline">
           <div>
-            <strong>Attached to {pokemon.name}</strong>
+            <strong>{pokemon.name} についている</strong>
             <span>{detailAttachments.length} card{detailAttachments.length === 1 ? '' : 's'}</span>
           </div>
           <button type="button" class="focus-close" onclick={() => (inspectingAttachments = false)} aria-label="Close attached cards">
@@ -218,14 +218,14 @@
               </span>
             </div>
             <span class="focus-meta">
-              {slot.slot === 'active' ? 'Active' : `Bench ${slot.index + 1}`}
+              {slot.slot === 'active' ? 'バトル場' : `ベンチ ${slot.index + 1}`}
               · {slot.energy.length} Energy
               {#if slot.tools.length}
                 · {slot.tools.length} Tool
               {/if}
             </span>
           </div>
-          <button type="button" class="focus-close" onclick={close} aria-label="Close Pokemon actions">
+          <button type="button" class="focus-close" onclick={close} aria-label="ポケモンアクションを閉じる">
             Close
           </button>
         </div>
@@ -234,7 +234,7 @@
           <div class="action-stack">
             {#if pokemon.powers?.length}
               <div class="action-group">
-                <span>Abilities</span>
+                <span>とくせい</span>
                 {#each pokemon.powers as power}
                   {@const action = abilityAction(power.name)}
                   <button
@@ -267,7 +267,7 @@
 
             {#if isActive && pokemon.attacks?.length}
               <div class="action-group">
-                <span>Attacks</span>
+                <span>ワザ</span>
                 {#each pokemon.attacks as item}
                   {@const cost = attackCost(item)}
                   {@const affordable = canPayAttack(item)}
@@ -314,7 +314,7 @@
                     <img class:unpaid={!token.paid} src={token.icon} alt={token.label} title={token.label} />
                   {/each}
                 </span>
-                <strong>Retreat</strong>
+                <strong>にげる</strong>
               </button>
             </div>
           {/if}

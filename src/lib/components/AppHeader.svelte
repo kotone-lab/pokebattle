@@ -1,7 +1,7 @@
 <header class="app-header">
   <div>
     <h1>CABT Battle Viewer</h1>
-    <p>Human vs AI play and AI vs AI game review.</p>
+    <p>人間 vs AI 対戦・AI vs AI リプレイ観戦</p>
   </div>
 </header>
 

@@ -11,14 +11,14 @@ import {
 } from './types';
 
 const phaseLabels: Record<number, string> = {
-  0: 'Waiting',
-  1: 'Setup',
-  2: 'Player turn',
-  3: 'Attack',
-  4: 'After attack',
-  5: 'Choose prizes',
-  6: 'Between turns',
-  7: 'Finished',
+  0: '待機中',
+  1: 'セットアップ',
+  2: 'プレイヤーのターン',
+  3: 'ワザ',
+  4: 'ワザ後',
+  5: 'サイドを選ぶ',
+  6: 'ターン間',
+  7: 'ゲーム終了',
 };
 
 export function buildHeadlessGameView(snapshot: any): GameView {

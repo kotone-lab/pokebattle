@@ -96,17 +96,17 @@
   </label>
   <label>
     Theme
-    <select bind:value={themePreference} aria-label="Theme preference">
-      <option value="system">System</option>
-      <option value="light">Light</option>
-      <option value="dark">Dark</option>
+    <select bind:value={themePreference} aria-label="テーマ設定">
+      <option value="system">システム</option>
+      <option value="light">ライト</option>
+      <option value="dark">ダーク</option>
     </select>
   </label>
   <div class="sidebar-turn-actions">
-    <button disabled={busy || promptActive || gameFinished} onclick={passTurn}>Pass turn</button>
+    <button disabled={busy || promptActive || gameFinished} onclick={passTurn}>ターン終了</button>
     <button class="danger" disabled={busy || promptActive || gameFinished} onclick={concede}>Concede</button>
   </div>
-  <button disabled={switchDisabled} onclick={switchSides}>Switch sides</button>
+  <button disabled={switchDisabled} onclick={switchSides}>視点切替</button>
   <button onclick={resetGame}>{resetLabel}</button>
   {#if error}
     <span class="inline-error">{labelFor(error)}</span>

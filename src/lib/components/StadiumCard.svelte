@@ -20,7 +20,7 @@
   class:top-stadium-card={placement === 'top'}
   class:bottom-stadium-card={placement === 'bottom'}
   title={card.fullName}
-  onclick={() => showZone(owner.index, 'stadium', `${owner.name} stadium`)}
+  onclick={() => showZone(owner.index, 'stadium', `${owner.name} スタジアム`)}
 >
   <CardTile {card} compact />
 </button>

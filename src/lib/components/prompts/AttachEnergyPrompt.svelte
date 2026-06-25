@@ -115,9 +115,9 @@
   </div>
 
   {#snippet actions()}
-    <button disabled={resolving || attachAssignments.length === 0} onclick={resetAttachAssignments}>Reset</button>
+    <button disabled={resolving || attachAssignments.length === 0} onclick={resetAttachAssignments}>リセット</button>
     {#if options.allowCancel}
-      <button disabled={resolving} onclick={() => onresolve(null)}>Cancel</button>
+      <button disabled={resolving} onclick={() => onresolve(null)}>キャンセル</button>
     {/if}
     <button class="primary" disabled={resolving || attachAssignments.length < minSelections} onclick={submitAttachEnergy}>
       Confirm
